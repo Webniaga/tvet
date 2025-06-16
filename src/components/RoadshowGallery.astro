@@ -1,0 +1,613 @@
+---
+import { roadshowImages } from '../data/roadshowImages.js';
+---
+
+<section id="roadshow" class="section">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2 class="fade-in">Roadshow Event Gallery</h2>
+      <p class="fade-in">Highlights from our recent roadshow events showcasing TVET programs and opportunities</p>
+    </div>
+
+    <div class="roadshow-content">
+      <!-- Slideshow Container -->
+      <div class="slideshow-container fade-in">
+        <div class="slideshow-wrapper" id="slideshow-wrapper">
+          <div class="slides-track" id="slides-track">
+            {roadshowImages.map((image, index) => (
+              <div class="slide" data-image-index={index}>
+                <div class="slide-image">
+                  <img 
+                    src={image.src} 
+                    alt={image.alt}
+                    loading="lazy"
+                  />
+                  <div class="slide-overlay">
+                    <div class="overlay-content">
+                      <div class="overlay-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
+                        </svg>
+                      </div>
+                      <h4>View Full Image</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Slideshow Controls -->
+        <div class="slideshow-controls">
+          <button class="slide-nav slide-prev" id="slide-prev">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+          <button class="slide-nav slide-next" id="slide-next">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Slideshow Indicators -->
+        <div class="slideshow-indicators" id="slideshow-indicators">
+          {roadshowImages.map((_, index) => (
+            <button class="indicator" data-slide={index}></button>
+          ))}
+        </div>
+
+        <!-- Slideshow Counter -->
+        <div class="slideshow-counter">
+          <span id="slide-counter">1 / {roadshowImages.length}</span>
+        </div>
+
+        <!-- Auto-play Controls -->
+        <div class="slideshow-autoplay">
+          <button class="autoplay-btn" id="autoplay-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="play-icon">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="pause-icon" style="display: none;">
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Gallery CTA -->
+      <div class="gallery-cta fade-in">
+        <div class="cta-content">
+          <h3>Join Our Next Roadshow Event</h3>
+          <p>Stay updated with our upcoming roadshow events and discover the opportunities waiting for you at AKADEMI TVET UNIRAZAK.</p>
+          <div class="cta-buttons">
+            <a href="#contact" class="btn btn-primary btn-lg">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+              </svg>
+              Get Event Updates
+            </a>
+            <a href="https://wa.me/601170167899" class="btn btn-secondary btn-lg">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.951 3.688"/>
+              </svg>
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .roadshow-content {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  /* Slideshow Container */
+  .slideshow-container {
+    position: relative;
+    background: var(--gray-800);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--gray-700);
+    margin-bottom: var(--space-12);
+  }
+
+  .slideshow-wrapper {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+  }
+
+  .slides-track {
+    display: flex;
+    width: calc(100% * 13); /* 13 images */
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+    width: calc(100% / 13); /* Each slide takes 1/13 of track width */
+    height: 100%;
+    flex-shrink: 0;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .slide-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .slide-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .slide:hover .slide-image img {
+    transform: scale(1.05);
+  }
+
+  .slide-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(224, 43, 109, 0.9), rgba(184, 32, 144, 0.9));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .slide:hover .slide-overlay {
+    opacity: 1;
+  }
+
+  .overlay-content {
+    text-align: center;
+    color: white;
+  }
+
+  .overlay-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    margin: 0 auto var(--space-3);
+  }
+
+  .overlay-content h4 {
+    color: white;
+    font-size: 1.25rem;
+    margin: 0;
+  }
+
+  /* Slideshow Controls */
+  .slideshow-controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 var(--space-4);
+    pointer-events: none;
+  }
+
+  .slide-nav {
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    pointer-events: auto;
+  }
+
+  .slide-nav:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: scale(1.1);
+  }
+
+  .slide-nav:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* Slideshow Indicators */
+  .slideshow-indicators {
+    position: absolute;
+    bottom: var(--space-4);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--space-2);
+    background: rgba(0, 0, 0, 0.5);
+    padding: var(--space-2);
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .indicator.active {
+    background: var(--primary-400);
+    transform: scale(1.2);
+  }
+
+  .indicator:hover {
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  /* Slideshow Counter */
+  .slideshow-counter {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: var(--space-2) var(--space-3);
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+  }
+
+  /* Auto-play Controls */
+  .slideshow-autoplay {
+    position: absolute;
+    top: var(--space-4);
+    left: var(--space-4);
+  }
+
+  .autoplay-btn {
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+
+  .autoplay-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: scale(1.1);
+  }
+
+  /* Gallery CTA */
+  .gallery-cta {
+    background: linear-gradient(135deg, var(--secondary-600), var(--accent-600));
+    color: white;
+    padding: var(--space-8);
+    border-radius: 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gallery-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.5;
+  }
+
+  .cta-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-content h3 {
+    color: white;
+    margin-bottom: var(--space-3);
+    font-size: 2rem;
+  }
+
+  .cta-content p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--space-6);
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-lg {
+    padding: var(--space-3) var(--space-6);
+    font-size: 1.125rem;
+  }
+
+  @media (max-width: 768px) {
+    .slideshow-wrapper {
+      height: 400px;
+    }
+
+    .slide-nav {
+      width: 40px;
+      height: 40px;
+    }
+
+    .slideshow-controls {
+      padding: 0 var(--space-2);
+    }
+
+    .slideshow-indicators {
+      bottom: var(--space-2);
+      gap: var(--space-1);
+    }
+
+    .indicator {
+      width: 10px;
+      height: 10px;
+    }
+
+    .slideshow-counter {
+      top: var(--space-2);
+      right: var(--space-2);
+      font-size: 0.75rem;
+    }
+
+    .slideshow-autoplay {
+      top: var(--space-2);
+      left: var(--space-2);
+    }
+
+    .autoplay-btn {
+      width: 35px;
+      height: 35px;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-lg {
+      width: 100%;
+      max-width: 280px;
+      justify-content: center;
+    }
+
+    .cta-content h3 {
+      font-size: 1.5rem;
+    }
+
+    .overlay-icon {
+      width: 48px;
+      height: 48px;
+    }
+
+    .overlay-content h4 {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<script>
+  import { roadshowImages } from '../data/roadshowImages.js';
+
+  class RoadshowSlideshow {
+    constructor() {
+      this.slidesTrack = document.getElementById('slides-track');
+      this.slideCounter = document.getElementById('slide-counter');
+      this.slidePrev = document.getElementById('slide-prev');
+      this.slideNext = document.getElementById('slide-next');
+      this.autoplayBtn = document.getElementById('autoplay-btn');
+      this.indicators = document.querySelectorAll('.indicator');
+      this.slides = document.querySelectorAll('.slide');
+      
+      this.currentSlide = 0;
+      this.totalSlides = roadshowImages.length;
+      this.isAutoplay = false;
+      this.autoplayInterval = null;
+      this.autoplayDelay = 4000; // 4 seconds
+      
+      this.init();
+    }
+
+    init() {
+      if (!this.slidesTrack) return;
+
+      // Set initial state
+      this.updateSlideshow();
+      
+      // Event listeners
+      this.slidePrev?.addEventListener('click', () => this.prevSlide());
+      this.slideNext?.addEventListener('click', () => this.nextSlide());
+      this.autoplayBtn?.addEventListener('click', () => this.toggleAutoplay());
+
+      // Indicator clicks
+      this.indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => this.goToSlide(index));
+      });
+
+      // Slide clicks for lightbox
+      this.slides.forEach((slide, index) => {
+        slide.addEventListener('click', () => {
+          if (window.lightboxManager) {
+            window.lightboxManager.openLightbox(roadshowImages, index);
+          }
+        });
+      });
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.target.closest('.slideshow-container')) {
+          switch(e.key) {
+            case 'ArrowLeft':
+              e.preventDefault();
+              this.prevSlide();
+              break;
+            case 'ArrowRight':
+              e.preventDefault();
+              this.nextSlide();
+              break;
+            case ' ':
+              e.preventDefault();
+              this.toggleAutoplay();
+              break;
+          }
+        }
+      });
+
+      // Pause autoplay on hover
+      const slideshowContainer = document.querySelector('.slideshow-container');
+      if (slideshowContainer) {
+        slideshowContainer.addEventListener('mouseenter', () => {
+          if (this.isAutoplay) {
+            this.pauseAutoplay();
+          }
+        });
+
+        slideshowContainer.addEventListener('mouseleave', () => {
+          if (this.isAutoplay) {
+            this.startAutoplay();
+          }
+        });
+      }
+    }
+
+    updateSlideshow() {
+      // Move slides track
+      const translateX = -this.currentSlide * (100 / this.totalSlides);
+      this.slidesTrack.style.transform = `translateX(${translateX}%)`;
+
+      // Update counter
+      if (this.slideCounter) {
+        this.slideCounter.textContent = `${this.currentSlide + 1} / ${this.totalSlides}`;
+      }
+
+      // Update indicators
+      this.indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === this.currentSlide);
+      });
+
+      // Update navigation buttons
+      if (this.slidePrev) {
+        this.slidePrev.disabled = this.currentSlide === 0;
+      }
+      if (this.slideNext) {
+        this.slideNext.disabled = this.currentSlide === this.totalSlides - 1;
+      }
+    }
+
+    prevSlide() {
+      if (this.currentSlide > 0) {
+        this.currentSlide--;
+        this.updateSlideshow();
+      }
+    }
+
+    nextSlide() {
+      if (this.currentSlide < this.totalSlides - 1) {
+        this.currentSlide++;
+        this.updateSlideshow();
+      } else if (this.isAutoplay) {
+        // Loop back to first slide in autoplay mode
+        this.currentSlide = 0;
+        this.updateSlideshow();
+      }
+    }
+
+    goToSlide(index) {
+      this.currentSlide = index;
+      this.updateSlideshow();
+    }
+
+    toggleAutoplay() {
+      if (this.isAutoplay) {
+        this.stopAutoplay();
+      } else {
+        this.startAutoplay();
+      }
+    }
+
+    startAutoplay() {
+      this.isAutoplay = true;
+      this.autoplayInterval = setInterval(() => {
+        if (this.currentSlide < this.totalSlides - 1) {
+          this.nextSlide();
+        } else {
+          this.currentSlide = 0;
+          this.updateSlideshow();
+        }
+      }, this.autoplayDelay);
+
+      // Update button icon
+      if (this.autoplayBtn) {
+        this.autoplayBtn.querySelector('.play-icon').style.display = 'none';
+        this.autoplayBtn.querySelector('.pause-icon').style.display = 'block';
+      }
+    }
+
+    pauseAutoplay() {
+      if (this.autoplayInterval) {
+        clearInterval(this.autoplayInterval);
+        this.autoplayInterval = null;
+      }
+    }
+
+    stopAutoplay() {
+      this.isAutoplay = false;
+      this.pauseAutoplay();
+
+      // Update button icon
+      if (this.autoplayBtn) {
+        this.autoplayBtn.querySelector('.play-icon').style.display = 'block';
+        this.autoplayBtn.querySelector('.pause-icon').style.display = 'none';
+      }
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    new RoadshowSlideshow();
+  });
+</script>

@@ -1,0 +1,308 @@
+---
+---
+
+<!-- Floating Icons -->
+<div class="floating-icons">
+  <!-- WhatsApp Floating Icon (Right) -->
+  <a href="https://wa.me/601170167899" class="floating-icon whatsapp-icon" id="whatsapp-icon" target="_blank" rel="noopener noreferrer">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.951 3.688"/>
+    </svg>
+    <div class="floating-tooltip">Chat with us on WhatsApp</div>
+  </a>
+
+  <!-- Scroll to Top Floating Icon (Left) -->
+  <button class="floating-icon scroll-top-icon" id="scroll-top-icon">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M7 14l5-5 5 5z"/>
+    </svg>
+    <div class="floating-tooltip">Scroll to top</div>
+  </button>
+</div>
+
+<style>
+  .floating-icons {
+    position: fixed;
+    bottom: var(--space-6);
+    z-index: 1000;
+    pointer-events: none;
+  }
+
+  .floating-icon {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    pointer-events: auto;
+    border: none;
+    font-size: 0;
+  }
+
+  .floating-icon:hover {
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  /* WhatsApp Icon */
+  .whatsapp-icon {
+    right: var(--space-6);
+    bottom: var(--space-6);
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: white;
+    animation: whatsappPulse 2s infinite;
+  }
+
+  .whatsapp-icon:hover {
+    background: linear-gradient(135deg, #128c7e, #075e54);
+  }
+
+  @keyframes whatsappPulse {
+    0%, 100% {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    50% {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+  }
+
+  /* Scroll to Top Icon */
+  .scroll-top-icon {
+    left: var(--space-6);
+    bottom: var(--space-6);
+    background: linear-gradient(135deg, var(--primary-600), var(--primary-500));
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+  }
+
+  .scroll-top-icon.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .scroll-top-icon:hover {
+    background: linear-gradient(135deg, var(--primary-700), var(--primary-600));
+  }
+
+  /* Tooltips */
+  .floating-tooltip {
+    position: absolute;
+    background: var(--gray-900);
+    color: white;
+    padding: var(--space-2) var(--space-3);
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--gray-700);
+  }
+
+  .whatsapp-icon .floating-tooltip {
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .scroll-top-icon .floating-tooltip {
+    left: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .floating-icon:hover .floating-tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Tooltip arrows */
+  .whatsapp-icon .floating-tooltip::after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 6px solid transparent;
+    border-left-color: var(--gray-900);
+  }
+
+  .scroll-top-icon .floating-tooltip::after {
+    content: '';
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 6px solid transparent;
+    border-right-color: var(--gray-900);
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .floating-icon {
+      width: 50px;
+      height: 50px;
+    }
+
+    .whatsapp-icon {
+      right: var(--space-4);
+      bottom: var(--space-4);
+    }
+
+    .scroll-top-icon {
+      left: var(--space-4);
+      bottom: var(--space-4);
+    }
+
+    .floating-tooltip {
+      display: none; /* Hide tooltips on mobile */
+    }
+
+    .floating-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .floating-icon {
+      width: 45px;
+      height: 45px;
+    }
+
+    .whatsapp-icon {
+      right: var(--space-3);
+      bottom: var(--space-3);
+    }
+
+    .scroll-top-icon {
+      left: var(--space-3);
+      bottom: var(--space-3);
+    }
+
+    .floating-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  /* Ensure icons don't interfere with mobile menu */
+  @media (max-width: 768px) {
+    body.mobile-menu-open .floating-icons {
+      z-index: 999; /* Lower than mobile menu */
+    }
+  }
+
+  /* Hide during lightbox */
+  .lightbox.active ~ .floating-icons {
+    opacity: 0;
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const scrollTopIcon = document.getElementById('scroll-top-icon');
+    const whatsappIcon = document.getElementById('whatsapp-icon');
+    
+    // Scroll to top functionality
+    if (scrollTopIcon) {
+      // Show/hide scroll to top button based on scroll position
+      function toggleScrollTopButton() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const showThreshold = 300; // Show after scrolling 300px
+        
+        if (scrollTop > showThreshold) {
+          scrollTopIcon.classList.add('visible');
+        } else {
+          scrollTopIcon.classList.remove('visible');
+        }
+      }
+
+      // Smooth scroll to top
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+
+      // Event listeners
+      window.addEventListener('scroll', toggleScrollTopButton);
+      scrollTopIcon.addEventListener('click', scrollToTop);
+
+      // Initial check
+      toggleScrollTopButton();
+    }
+
+    // WhatsApp icon click tracking (optional analytics)
+    if (whatsappIcon) {
+      whatsappIcon.addEventListener('click', function() {
+        // Optional: Add analytics tracking here
+        console.log('WhatsApp icon clicked');
+      });
+    }
+
+    // Add subtle entrance animation
+    setTimeout(() => {
+      if (whatsappIcon) {
+        whatsappIcon.style.transform = 'scale(1)';
+        whatsappIcon.style.opacity = '1';
+      }
+    }, 1000);
+
+    // Keyboard accessibility
+    document.addEventListener('keydown', function(e) {
+      // Allow Enter or Space to trigger scroll to top
+      if ((e.key === 'Enter' || e.key === ' ') && e.target === scrollTopIcon) {
+        e.preventDefault();
+        scrollTopIcon.click();
+      }
+    });
+
+    // Pause WhatsApp animation on hover
+    if (whatsappIcon) {
+      whatsappIcon.addEventListener('mouseenter', function() {
+        this.style.animationPlayState = 'paused';
+      });
+      
+      whatsappIcon.addEventListener('mouseleave', function() {
+        this.style.animationPlayState = 'running';
+      });
+    }
+
+    // Hide icons when mobile menu is open
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu) {
+      const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+            const floatingIcons = document.querySelector('.floating-icons');
+            if (floatingIcons) {
+              if (mobileMenu.classList.contains('active')) {
+                floatingIcons.style.opacity = '0.5';
+              } else {
+                floatingIcons.style.opacity = '1';
+              }
+            }
+          }
+        });
+      });
+      
+      observer.observe(mobileMenu, { attributes: true });
+    }
+  });
+</script>
