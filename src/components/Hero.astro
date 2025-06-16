@@ -1,35 +1,251 @@
 ---
 ---
 
-<section class="relative h-screen-90 flex items-center justify-center">
-  <!-- Background Image -->
-  <div class="absolute inset-0 z-0">
-    <img 
-      src="https://ehsanseaviewpd.com/wp-content/uploads/2021/12/beach-1.jpg" 
-      alt="Beachfront hotel view managament" 
-      class="w-full h-full object-cover"
-      fetchpriority="high"
-    />
-    <div class="absolute inset-0 bg-black opacity-50"></div>
+<section class="hero">
+  <div class="hero-background">
+    <div class="hero-overlay"></div>
   </div>
   
-  <div class="container-custom relative z-10 text-center text-white">
-    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-      Host Unforgettable Events by the Sea
-    </h1>
-    <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">
-      Explore our custom-tailored packages for weddings, corporate retreats, 
-      family gatherings, and every special occasion in between.
-    </p>
-    <a href="#contact" class="btn btn-primary text-lg px-8 py-4 shadow-lg">
-      Get a Quote
-    </a>
-  </div>
-  
-  <!-- Scroll indicator -->
-  <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-    </svg>
+  <div class="container hero-content">
+    <div class="hero-text">
+      <h1 class="hero-title fade-in">
+        Empowering Skills.<br>
+        <span class="hero-highlight">Transforming Futures.</span>
+      </h1>
+      <p class="hero-description fade-in">
+        Malaysia's premier TVET institution offering accredited skill programs from SKM Level 3 to DKM Level 4. 
+        Registered under Jabatan Pembangunan Kemahiran (JPK), Ministry of Human Resources.
+      </p>
+      <div class="hero-actions fade-in">
+        <a href="#programs" class="btn btn-primary btn-lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+          Explore Programs
+        </a>
+        <a href="#contact" class="btn btn-secondary btn-lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          Apply Now
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-stats fade-in">
+      <div class="stat-item">
+        <div class="stat-number">2023</div>
+        <div class="stat-label">Established</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">JPK</div>
+        <div class="stat-label">Accredited</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">8+</div>
+        <div class="stat-label">Programs</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">2024</div>
+        <div class="stat-label">Award Winner</div>
+      </div>
+    </div>
   </div>
 </section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 80px; /* Account for fixed header */
+  }
+
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+      rgba(100, 22, 22, 0.95) 0%, 
+      rgba(74, 16, 16, 0.9) 50%, 
+      rgba(45, 8, 8, 0.95) 100%
+    );
+    z-index: 1;
+  }
+
+  .hero-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 70%, rgba(224, 43, 109, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(184, 32, 144, 0.1) 0%, transparent 50%);
+    z-index: 2;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .hero-text {
+    margin-bottom: var(--space-12);
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    color: white;
+    margin-bottom: var(--space-6);
+    line-height: 1.1;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-highlight {
+    background: linear-gradient(135deg, var(--primary-400), var(--accent-400));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+  }
+
+  .hero-description {
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--space-8);
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-lg {
+    padding: var(--space-3) var(--space-6);
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--space-6);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--space-6);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-400);
+    margin-bottom: var(--space-1);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Animation delays for fade-in effect */
+  .hero-title {
+    animation-delay: 0.2s;
+  }
+
+  .hero-description {
+    animation-delay: 0.4s;
+  }
+
+  .hero-actions {
+    animation-delay: 0.6s;
+  }
+
+  .hero-stats {
+    animation-delay: 0.8s;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 90vh;
+      padding-top: 60px;
+    }
+
+    .hero-text {
+      margin-bottom: var(--space-8);
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-lg {
+      width: 100%;
+      max-width: 280px;
+      justify-content: center;
+    }
+
+    .hero-stats {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-4);
+      padding: var(--space-4);
+    }
+
+    .stat-number {
+      font-size: 1.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-stats {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-3);
+    }
+  }
+</style>
